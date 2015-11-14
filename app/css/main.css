@@ -6394,6 +6394,7 @@ body {
   padding: 0;
   height: 100%; }
 
+<<<<<<< HEAD
 .container {
   width: 600px;
   min-height: 100%;
@@ -6428,5 +6429,9 @@ body {
     .footer .links a:last-child::after {
       content: "";
       padding: 0 0.4rem 0 0.8rem; }
+=======
+.traveler-list img {
+  max-width: 200px; }
+>>>>>>> theatondev
 
 /*# sourceMappingURL=main.css.map */

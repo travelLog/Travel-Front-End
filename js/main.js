@@ -16,8 +16,8 @@ angular
     URL: "https://api.parse.com/1/",
     CONFIG: {
       headers: {
-        'X-Parse-Application-Id': 'ByXUCRrnspC3USquH3dFzHgQSmOWvQ3pj10coJWe',
-        'X-Parse-REST-API-Key': 'sXuKkgfdGMOkssUQ67J0I9zVMRrubUP4tSLa7t3Z'
+        'X-Parse-Application-Id': 'y6KjiO3d067pN9BqYopldmUHxOFsSZbPFqh7hQhH',
+        'X-Parse-REST-API-Key': 'RsAJRP7w7pBbeRmm1fGTf8bpyXFHc6gLMuSwJB6J'
       }
     }
   })
