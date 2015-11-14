@@ -60,12 +60,7 @@ Object.defineProperty(exports, '__esModule', {
 });
 var LocationController = function LocationController($scope) {
 
-  $scope.title = 'EXPERT ';
-  $scope.titletwo = 'SAS ';
-  $scope.titlethree = 'INSTALLATION AND ADMINISTRATION';
-  $scope.titleTwo = 'SAS Enterprise Consulting';
-
-  $scope.aboutText = 'I am some location text';
+  $scope.title = 'You are on the location page!';
 };
 
 LocationController.$inject = ['$scope'];
@@ -81,12 +76,7 @@ Object.defineProperty(exports, '__esModule', {
 });
 var LogController = function LogController($scope) {
 
-  $scope.title = 'EXPERT ';
-  $scope.titletwo = 'SAS ';
-  $scope.titlethree = 'INSTALLATION AND ADMINISTRATION';
-  $scope.titleTwo = 'SAS Enterprise Consulting';
-
-  $scope.aboutText = 'I am some about text';
+  $scope.title = 'You are on the log page!';
 };
 
 LogController.$inject = ['$scope'];
@@ -102,12 +92,7 @@ Object.defineProperty(exports, '__esModule', {
 });
 var TravelerController = function TravelerController($scope) {
 
-  $scope.title = 'EXPERT ';
-  $scope.titletwo = 'SAS ';
-  $scope.titlethree = 'INSTALLATION AND ADMINISTRATION';
-  $scope.titleTwo = 'SAS Enterprise Consulting';
-
-  $scope.aboutText = 'I am some about text';
+  $scope.title = 'You are on the traveler page!';
 };
 
 TravelerController.$inject = ['$scope'];
