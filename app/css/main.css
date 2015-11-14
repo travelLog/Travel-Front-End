@@ -6391,6 +6391,7 @@ th.hide-for-touch {
 body {
   background: #e2ebf3; }
 
+<<<<<<< HEAD
 .container {
   width: 600px;
   height: 600px;
@@ -6421,6 +6422,10 @@ body {
     .footer .links a:last-child::after {
       content: "";
       padding: 0 0.4rem 0 0.8rem; }
+=======
+.traveler-list img {
+  max-width: 200px; }
+>>>>>>> theatondev
 
 .homePageContents {
   display: inline-block;

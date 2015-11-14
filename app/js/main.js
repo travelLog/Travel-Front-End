@@ -76,12 +76,7 @@ Object.defineProperty(exports, '__esModule', {
 });
 var LocationController = function LocationController($scope) {
 
-  $scope.title = 'EXPERT ';
-  $scope.titletwo = 'SAS ';
-  $scope.titlethree = 'INSTALLATION AND ADMINISTRATION';
-  $scope.titleTwo = 'SAS Enterprise Consulting';
-
-  $scope.aboutText = 'I am some location text';
+  $scope.title = 'You are on the location page!';
 };
 
 LocationController.$inject = ['$scope'];
@@ -97,12 +92,7 @@ Object.defineProperty(exports, '__esModule', {
 });
 var LogController = function LogController($scope) {
 
-  $scope.title = 'EXPERT ';
-  $scope.titletwo = 'SAS ';
-  $scope.titlethree = 'INSTALLATION AND ADMINISTRATION';
-  $scope.titleTwo = 'SAS Enterprise Consulting';
-
-  $scope.aboutText = 'I am some about text';
+  $scope.title = 'You are on the log page!';
 };
 
 LogController.$inject = ['$scope'];
@@ -111,25 +101,45 @@ exports['default'] = LogController;
 module.exports = exports['default'];
 
 },{}],5:[function(require,module,exports){
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var TravelerController = function TravelerController($scope) {
+var TravelerController = function TravelerController($scope, $http, PARSE) {
+  $scope.title = "Traveler ";
+  $scope.titletwo = "Information";
 
-  $scope.title = 'EXPERT ';
-  $scope.titletwo = 'SAS ';
-  $scope.titlethree = 'INSTALLATION AND ADMINISTRATION';
-  $scope.titleTwo = 'SAS Enterprise Consulting';
+  var url = PARSE.URL + 'classes/trips';
 
-  $scope.aboutText = 'I am some about text';
+  $http.get(url, PARSE.CONFIG).then(function (res) {
+    $scope.trips = res.data.results;
+  });
 };
 
-TravelerController.$inject = ['$scope'];
+TravelerController.$inject = ['$scope', '$http', 'PARSE'];
 
-exports['default'] = TravelerController;
-module.exports = exports['default'];
+exports["default"] = TravelerController;
+
+//   $scope.count = 0;
+//   $scope.message = "";
+
+//   $scope.incrementByOne= function() {
+//     $scope.count++;
+//     $scope.message= ($scope.count === 1) ? "Thank you for your submission.  We will contact you soon!" : "Thank you for your interest!";
+
+//   };
+
+//   $scope.addTrip = (obj) => {
+//     TripService.addTrip(obj).then( (res) => {
+//       $scope.trip = {};
+//     });
+//   };  
+
+// };
+// TravelerController.$inject = ['$scope', 'TripService'];
+// export default TravelerController;
+module.exports = exports["default"];
 
 },{}],6:[function(require,module,exports){
 'use strict';
@@ -170,8 +180,8 @@ _angular2['default'].module('app', ['ui.router']).constant('PARSE', {
   URL: "https://api.parse.com/1/",
   CONFIG: {
     headers: {
-      'X-Parse-Application-Id': 'ByXUCRrnspC3USquH3dFzHgQSmOWvQ3pj10coJWe',
-      'X-Parse-REST-API-Key': 'sXuKkgfdGMOkssUQ67J0I9zVMRrubUP4tSLa7t3Z'
+      'X-Parse-Application-Id': 'y6KjiO3d067pN9BqYopldmUHxOFsSZbPFqh7hQhH',
+      'X-Parse-REST-API-Key': 'RsAJRP7w7pBbeRmm1fGTf8bpyXFHc6gLMuSwJB6J'
     }
   }
 }).config(_config2['default']).controller('HomeController', _controllersHomeController2['default']).controller('LogController', _controllersLogController2['default']).controller('TravelerController', _controllersTravelerController2['default']).controller('LocationController', _controllersLocationController2['default']).service('TripService', _servicesTripService2['default']);
@@ -186,39 +196,42 @@ var TripService = function TripService($http, PARSE) {
 
   var url = PARSE.URL + 'classes/trips';
 
-  // let checkAuth = function () {
-  //   return true;
-  // };
+  var checkAuth = function checkAuth() {
+    return true;
+  };
 
   this.getTrips = function () {
-    //if (checkAuth()){    
-    return $http({
-      url: url,
-      headers: PARSE.CONFIG.headers,
-      method: 'GET',
-      cache: true
-    });
-    // }
+    if (checkAuth()) {
+      return $http({
+        url: url,
+        headers: PARSE.CONFIG.headers,
+        method: 'GET',
+        cache: true
+      });
+    }
   };
 
   this.getTrip = function (tripId) {
-    // if (checkAuth()){     
-    return $http({
-      method: 'GET',
-      url: url + '/' + tripId,
-      headers: PARSE.CONFIG.headers,
-      cache: true
-    });
-    // }
+    if (checkAuth()) {
+      return $http({
+        method: 'GET',
+        url: url + '/' + tripId,
+        headers: PARSE.CONFIG.headers,
+        cache: true
+      });
+    }
   };
 
   var Trip = function Trip(obj) {
-    this.title = obj.title;
     this.location = obj.location;
-    this.value = obj.value;
     this.Url = obj.Url;
     this.sum = obj.sum;
     this.userName = obj.userName;
+  };
+
+  this.addTrip = function (obj) {
+    var c = new Trip(obj);
+    return $http.post(url, c, PARSE.CONFIG);
   };
 };
 
