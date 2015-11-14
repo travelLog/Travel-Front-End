@@ -6429,6 +6429,7 @@ body {
       content: "";
       padding: 0 0.4rem 0 0.8rem; }
 
+<<<<<<< HEAD
 .homePageContents {
   display: inline-block;
   margin-left: 275px;
@@ -6457,6 +6458,8 @@ body {
 .traveler-list img {
   max-width: 200px; }
 
+=======
+>>>>>>> theatondev
 .traveler-list img {
   max-width: 200px; }
 
