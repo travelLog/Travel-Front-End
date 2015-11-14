@@ -1,4 +1,4 @@
-let HomeController = function ($scope) {
+let TravelerController = function ($scope) {
 
   $scope.title = 'EXPERT ';
   $scope.titletwo='SAS ';
@@ -13,6 +13,6 @@ let HomeController = function ($scope) {
 
 };
 
-HomeController.$inject = ['$scope'];
+TravelerController.$inject = ['$scope'];
 
-export default HomeController;
+export default TravelerController;

@@ -1,11 +1,11 @@
-let HomeController = function ($scope) {
+let LocationController = function ($scope) {
 
   $scope.title = 'EXPERT ';
   $scope.titletwo='SAS ';
   $scope.titlethree='INSTALLATION AND ADMINISTRATION';
   $scope.titleTwo = 'SAS Enterprise Consulting';
 
-  $scope.aboutText = 'I am some about text';
+  $scope.aboutText = 'I am some location text';
 
 
 
@@ -13,6 +13,6 @@ let HomeController = function ($scope) {
 
 };
 
-HomeController.$inject = ['$scope'];
+LocationController.$inject = ['$scope'];
 
-export default HomeController;
+export default LocationController;
