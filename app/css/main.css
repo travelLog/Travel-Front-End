@@ -6391,30 +6391,6 @@ th.hide-for-touch {
 body {
   background: #e2ebf3; }
 
-<<<<<<< HEAD
-.homePageContents {
-  display: inline-block;
-  margin-left: 275px;
-  margin-top: 40px; }
-  .homePageContents input {
-    display: inline-block;
-    width: 300px;
-    height: 50px;
-    border-radius: 10px; }
-  .homePageContents .myBtn {
-    border-radius: 10px;
-    margin-left: 20px;
-    font-family: 'Permanent Marker', cursive;
-    color: black; }
-  .homePageContents .showMe {
-    display: inline-block;
-    margin-right: 15px;
-    font-family: 'Permanent Marker', cursive; }
-  .homePageContents .passPort {
-    display: inline-block;
-    margin-left: 15px;
-    font-family: 'Permanent Marker', cursive; }
-=======
 .container {
   width: 600px;
   height: 600px;
@@ -6445,6 +6421,30 @@ body {
     .footer .links a:last-child::after {
       content: "";
       padding: 0 0.4rem 0 0.8rem; }
->>>>>>> master
+
+.homePageContents {
+  display: inline-block;
+  margin-left: 275px;
+  margin-top: 215px; }
+  .homePageContents input {
+    display: inline-block;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px; }
+  .homePageContents .myBtn {
+    border-radius: 10px;
+    margin-left: 20px;
+    font-family: 'Permanent Marker', cursive;
+    color: black; }
+  .homePageContents .showMe {
+    display: inline-block;
+    margin-right: 15px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 24px; }
+  .homePageContents .passPort {
+    display: inline-block;
+    margin-left: 15px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 24px; }
 
 /*# sourceMappingURL=main.css.map */
