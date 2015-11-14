@@ -1,0 +1,11 @@
+<h3>{{page.title}}</h3>
+<h4>{{page.description}}</h4>
+
+<ul>
+  <li ng-repeat="stamp in stamps">
+    <p>{{ stamp.location }}</p>
+    <p>{{ stamp.timeStamp }}</p>
+    <p>{{ stamp.photo }}</p>
+    <p>{{ stamp.caption }}</p>
+  </li>
+</ul>

@@ -1,0 +1,8 @@
+<h3>{{traveler.userName}}'s Pages</h3>
+
+<ul>
+  <li ng-repeat="page in pages">
+    <a href="#/page/{{ page.objectId }}">{{ page.photo }}</a>
+    <a href="#/page/{{ page.objectId }}">{{ page.title }}</a>
+  </li>
+</ul>
