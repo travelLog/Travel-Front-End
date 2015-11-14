@@ -1,4 +1,128 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var config = function config($stateProvider, $urlRouterProvider) {
+
+  $urlRouterProvider.otherwise('/');
+
+  $stateProvider.state('root', {
+    abstract: true,
+
+    templateUrl: 'templates/layout.tpl.html'
+  }).state('root.home', {
+    url: '/',
+    controller: 'HomeController',
+    templateUrl: 'templates/home.tpl.html'
+  }).state('root.log', {
+    url: '/log',
+    controller: 'LogController',
+    templateUrl: 'templates/log.tpl.html'
+  }).state('root.traveler', {
+    url: '/traveler',
+    controller: 'TravelerController',
+    templateUrl: 'templates/traveler.tpl.html'
+  }).state('root.location', {
+    url: '/location',
+    controller: 'LocationController',
+    templateUrl: 'templates/location.tpl.html'
+  });
+};
+
+config.$inject = ['$stateProvider', '$urlRouterProvider'];
+
+exports['default'] = config;
+module.exports = exports['default'];
+
+},{}],2:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var HomeController = function HomeController($scope) {
+
+  $scope.title = 'EXPERT ';
+  $scope.titletwo = 'SAS ';
+  $scope.titlethree = 'INSTALLATION AND ADMINISTRATION';
+  $scope.titleTwo = 'SAS Enterprise Consulting';
+
+  $scope.aboutText = 'I am some about text';
+};
+
+HomeController.$inject = ['$scope'];
+
+exports['default'] = HomeController;
+module.exports = exports['default'];
+
+},{}],3:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var LocationController = function LocationController($scope) {
+
+  $scope.title = 'EXPERT ';
+  $scope.titletwo = 'SAS ';
+  $scope.titlethree = 'INSTALLATION AND ADMINISTRATION';
+  $scope.titleTwo = 'SAS Enterprise Consulting';
+
+  $scope.aboutText = 'I am some location text';
+};
+
+LocationController.$inject = ['$scope'];
+
+exports['default'] = LocationController;
+module.exports = exports['default'];
+
+},{}],4:[function(require,module,exports){
+>>>>>>> master
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var LogController = function LogController($scope) {
+
+  $scope.title = 'EXPERT ';
+  $scope.titletwo = 'SAS ';
+  $scope.titlethree = 'INSTALLATION AND ADMINISTRATION';
+  $scope.titleTwo = 'SAS Enterprise Consulting';
+
+  $scope.aboutText = 'I am some about text';
+};
+
+LogController.$inject = ['$scope'];
+
+exports['default'] = LogController;
+module.exports = exports['default'];
+
+},{}],5:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var TravelerController = function TravelerController($scope) {
+
+  $scope.title = 'EXPERT ';
+  $scope.titletwo = 'SAS ';
+  $scope.titlethree = 'INSTALLATION AND ADMINISTRATION';
+  $scope.titleTwo = 'SAS Enterprise Consulting';
+
+  $scope.aboutText = 'I am some about text';
+};
+
+TravelerController.$inject = ['$scope'];
+
+exports['default'] = TravelerController;
+module.exports = exports['default'];
+
+},{}],6:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -9,9 +133,45 @@ var _angular2 = _interopRequireDefault(_angular);
 
 require('angular-ui-router');
 
+<<<<<<< HEAD
 _angular2['default'].module('app', ['ui-router']);
 
 },{"angular":4,"angular-ui-router":2}],2:[function(require,module,exports){
+=======
+var _config = require('./config');
+
+var _config2 = _interopRequireDefault(_config);
+
+var _controllersHomeController = require('./controllers/home.controller');
+
+var _controllersHomeController2 = _interopRequireDefault(_controllersHomeController);
+
+var _controllersLogController = require('./controllers/log.controller');
+
+var _controllersLogController2 = _interopRequireDefault(_controllersLogController);
+
+var _controllersTravelerController = require('./controllers/traveler.controller');
+
+var _controllersTravelerController2 = _interopRequireDefault(_controllersTravelerController);
+
+var _controllersLocationController = require('./controllers/location.controller');
+
+var _controllersLocationController2 = _interopRequireDefault(_controllersLocationController);
+
+_angular2['default'].module('app', ['ui.router']).constant('PARSE', {
+  URL: "https://api.parse.com/1/",
+  CONFIG: {
+    headers: {
+      'X-Parse-Application-Id': 'RUI0eVrObvApF6FDocHgEsvLfFkixKB1lVN9bO9k',
+      'X-Parse-REST-API-Key': 'TJduuakbFPVCAyNbAFqWyXfBej9oMilyvM0gZWzx'
+    }
+  }
+}).config(_config2['default']).controller('HomeController', _controllersHomeController2['default']).controller('LogController', _controllersLogController2['default']).controller('TravelerController', _controllersTravelerController2['default']).controller('LocationController', _controllersLocationController2['default']);
+
+//.service('ContactService', ContactService)
+//.service('AboutService', AboutService)
+
+},{"./config":1,"./controllers/home.controller":2,"./controllers/location.controller":3,"./controllers/log.controller":4,"./controllers/traveler.controller":5,"angular":9,"angular-ui-router":7}],7:[function(require,module,exports){
 /**
  * State-based routing for AngularJS
  * @version v0.2.15
@@ -4382,7 +4542,11 @@ angular.module('ui.router.state')
   .filter('isState', $IsStateFilter)
   .filter('includedByState', $IncludedByStateFilter);
 })(window, window.angular);
+<<<<<<< HEAD
 },{}],3:[function(require,module,exports){
+=======
+},{}],8:[function(require,module,exports){
+>>>>>>> master
 /**
  * @license AngularJS v1.4.7
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -33287,11 +33451,19 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
+<<<<<<< HEAD
 },{}],4:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
 },{"./angular":3}]},{},[1])
+=======
+},{}],9:[function(require,module,exports){
+require('./angular');
+module.exports = angular;
+
+},{"./angular":8}]},{},[6])
+>>>>>>> master
 
 
 //# sourceMappingURL=main.js.map
