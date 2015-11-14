@@ -6389,18 +6389,25 @@ th.hide-for-touch {
     display: table-cell !important; } }
 
 body {
-  background: #e2ebf3; }
+  background: #e2ebf3;
+  margin: 0;
+  padding: 0;
+  height: 100%; }
 
 .container {
   width: 600px;
-  height: 600px;
-  margin: 20px auto; }
+  min-height: 100%;
+  margin: 20px auto;
+  postion: relative; }
 
 .footer {
   background-color: #292c2f;
   text-align: center;
   font-size: 1.2rem;
-  padding: 1rem; }
+  padding: 1rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0; }
   .footer p.slogan {
     color: #8d9093;
     font-size: 1.8rem;

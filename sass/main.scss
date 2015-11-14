@@ -4,12 +4,17 @@
 
 body {
   background: #e2ebf3;
+  margin:0;
+  padding:0;
+  height: 100%;
 }
 
 .container {
   width: 600px;
-  height: 600px;
+  min-height: 100%;
   margin: 20px auto;
+  postion: relative;
+
 }
 
 .footer {
@@ -17,6 +22,9 @@ body {
   text-align: center;
   font-size: 1.2rem;
   padding: 1rem;
+  width:100%;
+  position: absolute;
+  bottom:0;
   p {
     &.slogan {
       color: #8d9093;
