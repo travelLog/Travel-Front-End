@@ -1,6 +1,6 @@
 let HomeController = function ($scope) {
 
-  $scope.title = 'You are Home!';
+  // $scope.title = 'You are Home!';
 
 
 
