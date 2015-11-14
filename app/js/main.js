@@ -1,13 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-"use strict";
-
-},{}],2:[function(require,module,exports){
-"use strict";
-
-},{}],3:[function(require,module,exports){
-"use strict";
-
-},{}],4:[function(require,module,exports){
 'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -18,21 +9,9 @@ var _angular2 = _interopRequireDefault(_angular);
 
 require('angular-ui-router');
 
-var _controllersHomeController = require('./controllers/home.controller');
-
-var _controllersHomeController2 = _interopRequireDefault(_controllersHomeController);
-
-var _controllersLogController = require('./controllers/log.controller');
-
-var _controllersLogController2 = _interopRequireDefault(_controllersLogController);
-
-var _controllersTravellerController = require('./controllers/traveller.controller');
-
-var _controllersTravellerController2 = _interopRequireDefault(_controllersTravellerController);
-
 _angular2['default'].module('app', ['ui-router']);
 
-},{"./controllers/home.controller":1,"./controllers/log.controller":2,"./controllers/traveller.controller":3,"angular":7,"angular-ui-router":5}],5:[function(require,module,exports){
+},{"angular":4,"angular-ui-router":2}],2:[function(require,module,exports){
 /**
  * State-based routing for AngularJS
  * @version v0.2.15
@@ -4403,7 +4382,7 @@ angular.module('ui.router.state')
   .filter('isState', $IsStateFilter)
   .filter('includedByState', $IncludedByStateFilter);
 })(window, window.angular);
-},{}],6:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.7
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -33308,11 +33287,11 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],7:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":6}]},{},[4])
+},{"./angular":3}]},{},[1])
 
 
 //# sourceMappingURL=main.js.map
