@@ -10,24 +10,39 @@ var config = function config($stateProvider, $urlRouterProvider) {
 
   $stateProvider.state('root', {
     abstract: true,
-
     templateUrl: 'templates/layout.tpl.html'
   }).state('root.home', {
     url: '/',
-    controller: 'HomeController',
-    templateUrl: 'templates/home.tpl.html'
+    views: {
+      content: {
+        controller: 'HomeController',
+        templateUrl: 'templates/home.tpl.html'
+      }
+    }
   }).state('root.log', {
     url: '/log',
-    controller: 'LogController',
-    templateUrl: 'templates/log.tpl.html'
+    views: {
+      content: {
+        controller: 'LogController',
+        templateUrl: 'templates/log.tpl.html'
+      }
+    }
   }).state('root.traveler', {
     url: '/traveler',
-    controller: 'TravelerController',
-    templateUrl: 'templates/traveler.tpl.html'
+    views: {
+      content: {
+        controller: 'TravelerController',
+        templateUrl: 'templates/traveler.tpl.html'
+      }
+    }
   }).state('root.location', {
     url: '/location',
-    controller: 'LocationController',
-    templateUrl: 'templates/location.tpl.html'
+    views: {
+      content: {
+        controller: 'LocationController',
+        templateUrl: 'templates/location.tpl.html'
+      }
+    }
   });
 };
 
@@ -131,20 +146,72 @@ var _controllersLocationController = require('./controllers/location.controller'
 
 var _controllersLocationController2 = _interopRequireDefault(_controllersLocationController);
 
+var _servicesTripService = require('./services/trip.service');
+
+var _servicesTripService2 = _interopRequireDefault(_servicesTripService);
+
 _angular2['default'].module('app', ['ui.router']).constant('PARSE', {
   URL: "https://api.parse.com/1/",
   CONFIG: {
     headers: {
-      'X-Parse-Application-Id': 'RUI0eVrObvApF6FDocHgEsvLfFkixKB1lVN9bO9k',
-      'X-Parse-REST-API-Key': 'TJduuakbFPVCAyNbAFqWyXfBej9oMilyvM0gZWzx'
+      'X-Parse-Application-Id': 'ByXUCRrnspC3USquH3dFzHgQSmOWvQ3pj10coJWe',
+      'X-Parse-REST-API-Key': 'sXuKkgfdGMOkssUQ67J0I9zVMRrubUP4tSLa7t3Z'
     }
   }
-}).config(_config2['default']).controller('HomeController', _controllersHomeController2['default']).controller('LogController', _controllersLogController2['default']).controller('TravelerController', _controllersTravelerController2['default']).controller('LocationController', _controllersLocationController2['default']);
+}).config(_config2['default']).controller('HomeController', _controllersHomeController2['default']).controller('LogController', _controllersLogController2['default']).controller('TravelerController', _controllersTravelerController2['default']).controller('LocationController', _controllersLocationController2['default']).service('TripService', _servicesTripService2['default']);
 
-//.service('ContactService', ContactService)
-//.service('AboutService', AboutService)
+},{"./config":1,"./controllers/home.controller":2,"./controllers/location.controller":3,"./controllers/log.controller":4,"./controllers/traveler.controller":5,"./services/trip.service":7,"angular":10,"angular-ui-router":8}],7:[function(require,module,exports){
+'use strict';
 
-},{"./config":1,"./controllers/home.controller":2,"./controllers/location.controller":3,"./controllers/log.controller":4,"./controllers/traveler.controller":5,"angular":9,"angular-ui-router":7}],7:[function(require,module,exports){
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var TripService = function TripService($http, PARSE) {
+
+  var url = PARSE.URL + 'classes/trips';
+
+  // let checkAuth = function () {
+  //   return true;
+  // };
+
+  this.getTrips = function () {
+    //if (checkAuth()){    
+    return $http({
+      url: url,
+      headers: PARSE.CONFIG.headers,
+      method: 'GET',
+      cache: true
+    });
+    // }
+  };
+
+  this.getTrip = function (tripId) {
+    // if (checkAuth()){     
+    return $http({
+      method: 'GET',
+      url: url + '/' + tripId,
+      headers: PARSE.CONFIG.headers,
+      cache: true
+    });
+    // }
+  };
+
+  var Trip = function Trip(obj) {
+    this.title = obj.title;
+    this.location = obj.location;
+    this.value = obj.value;
+    this.Url = obj.Url;
+    this.sum = obj.sum;
+    this.userName = obj.userName;
+  };
+};
+
+TripService.$inject = ['$http', 'PARSE'];
+
+exports['default'] = TripService;
+module.exports = exports['default'];
+
+},{}],8:[function(require,module,exports){
 /**
  * State-based routing for AngularJS
  * @version v0.2.15
@@ -4515,7 +4582,7 @@ angular.module('ui.router.state')
   .filter('isState', $IsStateFilter)
   .filter('includedByState', $IncludedByStateFilter);
 })(window, window.angular);
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.7
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -33420,11 +33487,11 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":8}]},{},[6])
+},{"./angular":9}]},{},[6])
 
 
 //# sourceMappingURL=main.js.map
