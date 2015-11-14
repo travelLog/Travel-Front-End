@@ -59,7 +59,8 @@ Object.defineProperty(exports, '__esModule', {
 });
 var HomeController = function HomeController($scope) {
 
-  $scope.title = 'You are Home!';
+  // $scope.title = 'You are Home!';
+
 };
 
 HomeController.$inject = ['$scope'];
