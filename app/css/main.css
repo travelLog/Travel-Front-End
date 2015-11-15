@@ -8414,69 +8414,35 @@ th.hide-for-touch {
   content: ""; }
 
 body {
-  background: #e2ebf3;
-  height: 100%;
+  background-image: url(../photos/10.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: auto;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  overflow: hidden; }
 
 .passport {
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto;
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 100%;
-  min-height: 100%; }
-  .passport:before, .passport:after {
-    content: " ";
-    display: table; }
-  .passport:after {
-    clear: both; }
-  .passport:last-child {
-    margin-right: 0; }
+  min-height: 100%;
+  margin: auto; }
 
 .top-bar {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 100%;
   width: 100%;
   height: 45px;
   top: 0px;
   margin-bottom: 50px;
   position: fixed;
   display: block; }
-  .top-bar:last-child {
-    margin-right: 0; }
 
 .center {
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto;
-  margin-left: 8.5298%; }
-  .center:before, .center:after {
-    content: " ";
-    display: table; }
-  .center:after {
-    clear: both; }
+  margin: auto;
+  width: 1600px;
+  display: block; }
   .center .container {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 100%;
-    margin-left: 8.5298%;
-    margin: auto;
     padding: 30px;
-    display: block;
-    overflow: hidden; }
-    .center .container:last-child {
-      margin-right: 0; }
+    display: block; }
 
 #footer {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
   width: 100%;
   position: fixed;
   background-color: #292c2f;
@@ -8484,10 +8450,7 @@ body {
   font-size: 1.2rem;
   padding: 1rem;
   height: 147px;
-  bottom: 0px;
-  box-sizing: border-box; }
-  #footer:last-child {
-    margin-right: 0; }
+  bottom: 0px; }
   #footer p.slogan {
     color: #8d9093;
     font-size: 1.8rem;
@@ -8524,59 +8487,63 @@ body {
     width: 300px;
     height: 50px;
     border-radius: 10px; }
-  .homePageContents .myBtn {
-    border-radius: 10px;
-    margin-left: 20px;
-    font-family: 'Permanent Marker', cursive;
-    color: black; }
-  .homePageContents .showMe {
-    display: inline-block;
-    margin-right: 15px;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 24px; }
-  .homePageContents .passPort {
-    display: inline-block;
-    margin-left: 15px;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 24px; }
+  .homePageContents .home-form {
+    text-align: center; }
+    .homePageContents .home-form .myBtn {
+      border-radius: 10px;
+      margin-left: 20px;
+      font-family: 'Permanent Marker', cursive;
+      color: black; }
+    .homePageContents .home-form .showMe {
+      display: inline-block;
+      margin-right: 15px;
+      font-family: 'Permanent Marker', cursive;
+      font-size: 24px; }
+    .homePageContents .home-form .passPort {
+      display: inline-block;
+      margin-left: 15px;
+      font-family: 'Permanent Marker', cursive;
+      font-size: 24px; }
 
 .travel-logs {
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto;
   margin: auto;
   margin-top: 5%;
   align: center;
   width: 100%; }
-  .travel-logs:before, .travel-logs:after {
-    content: " ";
-    display: table; }
-  .travel-logs:after {
-    clear: both; }
-  .travel-logs .traveler-list {
+  .travel-logs .traveler-list h3 {
+    text-align: center; }
+  .travel-logs .traveler-list li {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 100%; }
-    .travel-logs .traveler-list:last-child {
+    width: 23.23176%;
+    display: inline-block; }
+    .travel-logs .traveler-list li:last-child {
       margin-right: 0; }
-    .travel-logs .traveler-list li {
+    .travel-logs .traveler-list li:nth-child(4n) {
+      margin-right: 0; }
+    .travel-logs .traveler-list li:nth-child(4n+1) {
+      clear: left; }
+    .travel-logs .traveler-list li:last-child::after {
+      content: "";
+      padding: 0 0.4rem 0 0.8rem; }
+    .travel-logs .traveler-list li p {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 23.23176%;
-      display: inline-block; }
-      .travel-logs .traveler-list li:last-child {
+      width: 100%;
+      text-align: center;
+      display: block; }
+      .travel-logs .traveler-list li p:last-child {
         margin-right: 0; }
-      .travel-logs .traveler-list li:nth-child(4n) {
+    .travel-logs .traveler-list li img {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%;
+      height: 200px;
+      display: block; }
+      .travel-logs .traveler-list li img:last-child {
         margin-right: 0; }
-      .travel-logs .traveler-list li:nth-child(4n+1) {
-        clear: left; }
-      .travel-logs .traveler-list li p {
-        text-align: center;
-        margin: 10px 0; }
-      .travel-logs .traveler-list li img {
-        max-width: 200px;
-        height: 200px; }
 
 /*# sourceMappingURL=main.css.map */
