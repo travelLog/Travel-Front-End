@@ -8425,8 +8425,7 @@ body {
 
 .passport {
   min-height: 100%;
-  margin: auto;
-  position: relative; }
+  margin: auto; }
 
 .top-bar {
   width: 100%;
@@ -8476,7 +8475,7 @@ body {
 
 .home {
   margin: auto;
-  margin-top: 20%;
+  margin-top: 25%;
   margin-bottom: 20%;
   align: center;
   width: 80%; }

@@ -11,14 +11,14 @@ var config = function config($stateProvider, $urlRouterProvider) {
   $stateProvider.state('root', {
     abstract: true,
     templateUrl: 'templates/layout.tpl.html'
-  }).state('root.home', {
+  }).state('home', {
     url: '/',
-    views: {
-      content: {
-        controller: 'HomeController',
-        templateUrl: 'templates/home.tpl.html'
-      }
-    }
+    // views: {
+    //  content: {      
+    controller: 'HomeController',
+    templateUrl: 'templates/home.tpl.html'
+    //   },
+    // }
   }).state('root.log', {
     url: '/log',
     views: {

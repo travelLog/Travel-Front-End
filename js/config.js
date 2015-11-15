@@ -7,14 +7,14 @@ let config = function ($stateProvider, $urlRouterProvider) {
       abstract: true,
       templateUrl: 'templates/layout.tpl.html'
     })
-    .state('root.home', {
+    .state('home', {
       url: '/',
-       views: {
-        content: {       
+       // views: {
+       //  content: {       
           controller: 'HomeController',
           templateUrl: 'templates/home.tpl.html'
-        },
-      }
+      //   },
+      // }
     })
     .state('root.log', {
       url: '/log',
