@@ -6400,16 +6400,21 @@ body {
 
 .top-bar {
   width: 100%;
-  margin-bottom: 20px;
-  position: fixed; }
+  height: 45px;
+  top: 0px;
+  margin-bottom: 50px;
+  position: fixed;
+  display: block;
+  float: left; }
 
-.container {
+.center .container {
   width: 600px;
   margin: auto;
   margin-top: 40px;
   margin-bottom: 40px;
+  padding: 30px;
   display: block;
-  overflow: scroll; }
+  overflow: hidden; }
 
 #footer {
   position: fixed;
@@ -6419,7 +6424,8 @@ body {
   padding: 1rem;
   height: 147px;
   width: 100%;
-  bottom: 0; }
+  bottom: 0px;
+  box-sizing: border-box; }
   #footer p.slogan {
     color: #8d9093;
     font-size: 1.8rem;
@@ -6465,9 +6471,6 @@ body {
     margin-left: 15px;
     font-family: 'Permanent Marker', cursive;
     font-size: 24px; }
-
-.traveler-list img {
-  max-width: 200px; }
 
 .traveler-list img {
   max-width: 200px; }
