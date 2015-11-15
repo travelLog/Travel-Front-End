@@ -6404,8 +6404,7 @@ body {
   top: 0px;
   margin-bottom: 50px;
   position: fixed;
-  display: block;
-  float: left; }
+  display: block; }
 
 .center .container {
   width: 600px;
