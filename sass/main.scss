@@ -25,7 +25,7 @@ body {
 
 .center {
   .container {
-    width: 600px;
+    width: 1020px;
     margin: auto;
     margin-top: 40px;
     margin-bottom: 40px;
@@ -73,11 +73,17 @@ body {
   }
 }
 
-
+.home {
+  margin: auto;
+  margin-top: 20%;
+  align: center;
+  width: 80%;
+}
 .homePageContents {
- display: inline-block;
- margin-left: 275px;
- margin-top: 215px;  
+  width: 100%;
+  display: inline-block;
+  margin: auto;
+
   input {
    display: inline-block;
    width: 300px;

@@ -6407,7 +6407,7 @@ body {
   display: block; }
 
 .center .container {
-  width: 600px;
+  width: 1020px;
   margin: auto;
   margin-top: 40px;
   margin-bottom: 40px;
@@ -6446,10 +6446,16 @@ body {
       content: "";
       padding: 0 0.4rem 0 0.8rem; }
 
+.home {
+  margin: auto;
+  margin-top: 20%;
+  align: center;
+  width: 80%; }
+
 .homePageContents {
+  width: 100%;
   display: inline-block;
-  margin-left: 275px;
-  margin-top: 215px; }
+  margin: auto; }
   .homePageContents input {
     display: inline-block;
     width: 300px;

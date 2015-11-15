@@ -14,9 +14,15 @@ var config = function config($stateProvider, $urlRouterProvider) {
   }).state('root.home', {
     url: '/',
     views: {
+      navbar: {
+        template: ''
+      },
       content: {
         controller: 'HomeController',
         templateUrl: 'templates/home.tpl.html'
+      },
+      footer: {
+        template: ' '
       }
     }
   }).state('root.log', {
