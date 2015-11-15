@@ -26,7 +26,7 @@ let config = function ($stateProvider, $urlRouterProvider) {
       }
     })
     .state('root.traveler', {
-      url: '/traveler',
+      url: '/traveler/:id',
       views: {
         content: {       
           controller: 'TravelerController',
