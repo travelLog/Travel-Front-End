@@ -1,42 +1,39 @@
-<nav class="top-bar" data-topbar role="navigation">
-  <ul class="title-area">
-    <li class="name">
-      <h1><a href="#/">Passport</a></h1>
-    </li>
-  </ul>
+<div class="passport">
+
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="#/">Passport</a></h1>
+      </li>
+    </ul>
+    <section class="top-bar-section">
+      <ul class="right">
+        <li><a href="#/traveler"> obj.userName's Pages</a></li>
+        <li><a href="#/location">Where I've Been</a></li>
+      </ul>
+    </section>
+  </nav>
 
 
-<section class="top-bar-section">
-  <ul class="right">
-    <li><a href="#/traveler"> obj.userName's Pages</a></li>
-    <li><a href="#/location">Where I've Been</a></li>
-  </ul>
-</section>
-</nav>
 
 
 
+  <aside ui-view="sidebar">LOOOCATION</aside>
 
 
-<aside ui-view="sidebar">LOOOCATION</aside>
+  <section class="container" ui-view="content"></section>
 
-
-<section class="container" ui-view="content"></section>
-
-
-<footer ui-view="footer">
-  <p>&copy; 2015</p>
-
-<footer class="footer ui-view="footer">
-<div class="row">
-    <div class="small-12 columns">
-      <p class="slogan">Wanderlust Satisfied, No Airfare Necessary
-      <p class="links">
-        <a href="#">Home</a>
-        <a href="#/location">Locations</a>
-      </p>
-      <p class="copywrite">Most Awesome Group Ever © 2015</p>
+  <footer id="footer" ui-view="footer">
+  <div class="row">
+      <div class="small-12 columns">
+        <p class="slogan">Wanderlust Satisfied, No Airfare Necessary
+        <p class="links">
+          <a href="#">Home</a>
+          <a href="#/location">Locations</a>
+        </p>
+        <p class="copywrite">Most Awesome Group Ever © 2015</p>
+      </div>
     </div>
-  </div>
+  </footer>
 
-</footer>
+</div>
