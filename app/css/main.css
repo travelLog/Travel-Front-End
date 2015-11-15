@@ -8492,6 +8492,7 @@ body {
   .homePageContents .home-form {
     text-align: center; }
     .homePageContents .home-form .myBtn {
+      background-color: #8D9093;
       border-radius: 10px;
       margin: auto;
       font-family: 'Permanent Marker', cursive;
@@ -8513,8 +8514,8 @@ body {
   margin-top: 5%;
   align: center;
   width: 100%; }
-  .travel-logs h3 {
-    text-align: center; }
+  .travel-logs h1 {
+    color: #333333; }
   .travel-logs .traveler-list {
     overflow: visible !important; }
     .travel-logs .traveler-list li {
@@ -8522,21 +8523,23 @@ body {
       display: block;
       margin-right: 2.35765%;
       width: 23.23176%;
-      display: inline-block; }
+      display: inline-block;
+      border: 1px solid #333333;
+      border-radius: 4px;
+      margin-top: 40px; }
       .travel-logs .traveler-list li:last-child {
         margin-right: 0; }
       .travel-logs .traveler-list li:nth-child(4n) {
         margin-right: 0; }
       .travel-logs .traveler-list li:nth-child(4n+1) {
         clear: left; }
-      .travel-logs .traveler-list li:last-child::after {
-        content: "";
-        padding: 0 0.4rem 0 0.8rem; }
       .travel-logs .traveler-list li p {
         float: left;
         display: block;
         margin-right: 2.35765%;
         width: 100%;
+        margin: 5px 0;
+        color: #F4F6F3;
         text-align: center;
         display: block; }
         .travel-logs .traveler-list li p:last-child {

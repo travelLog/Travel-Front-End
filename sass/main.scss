@@ -104,6 +104,7 @@ body {
   .home-form {
     text-align: center;
     .myBtn {
+      background-color: #8D9093;
       border-radius:10px;
       margin: auto;
       font-family: 'Permanent Marker', cursive;
@@ -130,8 +131,8 @@ body {
   margin-top: 5%;
   align: center;
   width: 100%;
-  h3 {
-    text-align: center;
+  h1 {
+    color: #333333;
     }
   .traveler-list {
     overflow: visible !important;
@@ -139,13 +140,15 @@ body {
       @include span-columns(3 of 12);
       @include omega(4n);
       display: inline-block;
-      &:last-child::after {
-      content: "";
-      padding: 0 0.4rem 0 0.8rem;
-      }
+      border: 1px solid #333333;
+      border-radius: 4px;
+      margin-top: 40px;
+    
 
       p {
         @include span-columns(12 of 12);
+        margin: 5px 0;
+        color: #F4F6F3;
         text-align: center;
         display: block;
       }
