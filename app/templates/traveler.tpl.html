@@ -1,13 +1,8 @@
-<div class="traveler-list">
-    <h3>{{ title }}<span>{{ titletwo }}</span></h3>
-    <ul>
-  <li ng-repeat="trip in trips">
-    {{ trip.location }}
-    <img src="{{ trip.Url }}">
-    {{ trip.userName }}
-    {{ trip.sum }}
+<h3>My Logs</h3>
+
+<ul>
+  <li ng-repeat="log in logs">
+    {{ log.log_id }}{{ log.description }}  {{ log.title }}</a>
   </li>
 </ul>
-  
 
-  </div>

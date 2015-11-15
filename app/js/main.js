@@ -28,7 +28,7 @@ var config = function config($stateProvider, $urlRouterProvider) {
       }
     }
   }).state('root.traveler', {
-    url: '/traveler',
+    url: '/traveler/:id',
     views: {
       content: {
         controller: 'TravelerController',
@@ -52,21 +52,24 @@ exports['default'] = config;
 module.exports = exports['default'];
 
 },{}],2:[function(require,module,exports){
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var HomeController = function HomeController($scope) {
 
-  // $scope.title = 'You are Home!';
+  $scope.id = "";
 
+  $scope.search = function (num) {
+    console.log(num);
+  };
 };
 
 HomeController.$inject = ['$scope'];
 
-exports['default'] = HomeController;
-module.exports = exports['default'];
+exports["default"] = HomeController;
+module.exports = exports["default"];
 
 },{}],3:[function(require,module,exports){
 'use strict';
@@ -74,13 +77,17 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var LocationController = function LocationController($scope) {
+var LocationController = function LocationController($scope, LocationService) {
 
   $scope.title = 'You are on the location page!';
+  console.log($scope.title);
+
+  LocationService.getLogs().then(function (res) {
+    $scope.logs = res.data.logs;
+    console.log(res);
+  });
 };
-
-LocationController.$inject = ['$scope'];
-
+LocationController.$inject = ['$scope', 'LocationService'];
 exports['default'] = LocationController;
 module.exports = exports['default'];
 
@@ -90,56 +97,37 @@ module.exports = exports['default'];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var LogController = function LogController($scope) {
+var LogController = function LogController($scope, UserService) {
 
-  $scope.title = 'You are on the log page!';
+  $scope.title = 'You are on the Log page!';
+
+  LogService.getLogs().then(function (res) {
+    $scope.logs = res.data.logs;
+    console.log(res);
+  });
 };
-
-LogController.$inject = ['$scope'];
-
+LogController.$inject = ['$scope', 'LogService'];
 exports['default'] = LogController;
 module.exports = exports['default'];
 
 },{}],5:[function(require,module,exports){
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var TravelerController = function TravelerController($scope, $http, PARSE) {
-  $scope.title = "Traveler ";
-  $scope.titletwo = "Information";
+var TravelerController = function TravelerController($scope, UserService) {
 
-  var url = PARSE.URL + 'classes/trips';
+  $scope.title = 'You are on the Travler page!';
 
-  $http.get(url, PARSE.CONFIG).then(function (res) {
-    $scope.trips = res.data.results;
+  UserService.getLogs().then(function (res) {
+    $scope.logs = res.data.logs;
+    console.log(res);
   });
 };
-
-TravelerController.$inject = ['$scope', '$http', 'PARSE'];
-
-exports["default"] = TravelerController;
-
-//   $scope.count = 0;
-//   $scope.message = "";
-
-//   $scope.incrementByOne= function() {
-//     $scope.count++;
-//     $scope.message= ($scope.count === 1) ? "Thank you for your submission.  We will contact you soon!" : "Thank you for your interest!";
-
-//   };
-
-//   $scope.addTrip = (obj) => {
-//     TripService.addTrip(obj).then( (res) => {
-//       $scope.trip = {};
-//     });
-//   };  
-
-// };
-// TravelerController.$inject = ['$scope', 'TripService'];
-// export default TravelerController;
-module.exports = exports["default"];
+TravelerController.$inject = ['$scope', 'UserService'];
+exports['default'] = TravelerController;
+module.exports = exports['default'];
 
 },{}],6:[function(require,module,exports){
 'use strict';
@@ -172,75 +160,161 @@ var _controllersLocationController = require('./controllers/location.controller'
 
 var _controllersLocationController2 = _interopRequireDefault(_controllersLocationController);
 
-var _servicesTripService = require('./services/trip.service');
+var _servicesUserService = require('./services/user.service');
 
-var _servicesTripService2 = _interopRequireDefault(_servicesTripService);
+var _servicesUserService2 = _interopRequireDefault(_servicesUserService);
 
-_angular2['default'].module('app', ['ui.router']).constant('PARSE', {
-  URL: "https://api.parse.com/1/",
+var _servicesLocationService = require('./services/location.service');
+
+var _servicesLocationService2 = _interopRequireDefault(_servicesLocationService);
+
+var _servicesLogService = require('./services/log.service');
+
+var _servicesLogService2 = _interopRequireDefault(_servicesLogService);
+
+_angular2['default'].module('app', ['ui.router']).constant('SERVER', {
+  URL: "https://mysterious-fjord-1759.herokuapp.com/",
   CONFIG: {
-    headers: {
-      'X-Parse-Application-Id': 'y6KjiO3d067pN9BqYopldmUHxOFsSZbPFqh7hQhH',
-      'X-Parse-REST-API-Key': 'RsAJRP7w7pBbeRmm1fGTf8bpyXFHc6gLMuSwJB6J'
-    }
-  }
-}).config(_config2['default']).controller('HomeController', _controllersHomeController2['default']).controller('LogController', _controllersLogController2['default']).controller('TravelerController', _controllersTravelerController2['default']).controller('LocationController', _controllersLocationController2['default']).service('TripService', _servicesTripService2['default']);
+    headers: {}
 
-},{"./config":1,"./controllers/home.controller":2,"./controllers/location.controller":3,"./controllers/log.controller":4,"./controllers/traveler.controller":5,"./services/trip.service":7,"angular":10,"angular-ui-router":8}],7:[function(require,module,exports){
+  }
+
+}).config(_config2['default']).controller('HomeController', _controllersHomeController2['default']).controller('LogController', _controllersLogController2['default']).controller('TravelerController', _controllersTravelerController2['default']).controller('LocationController', _controllersLocationController2['default']).service('UserService', _servicesUserService2['default']).service('LocationService', _servicesLocationService2['default']);
+
+},{"./config":1,"./controllers/home.controller":2,"./controllers/location.controller":3,"./controllers/log.controller":4,"./controllers/traveler.controller":5,"./services/location.service":7,"./services/log.service":8,"./services/user.service":9,"angular":12,"angular-ui-router":10}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var TripService = function TripService($http, PARSE) {
+var LocationService = function LocationService($http, SERVER) {
 
-  var url = PARSE.URL + 'classes/trips';
+  var url = 'https://mysterious-fjord-1759.herokuapp.com' + '/users/3/logs';
 
-  var checkAuth = function checkAuth() {
-    return true;
+  this.getLogs = function () {
+    return $http({
+      url: url,
+      method: 'GET',
+      cache: true
+    });
   };
 
-  this.getTrips = function () {
-    if (checkAuth()) {
-      return $http({
-        url: url,
-        headers: PARSE.CONFIG.headers,
-        method: 'GET',
-        cache: true
-      });
-    }
+  this.getLog = function (log_id) {
+    return $http({
+      method: 'GET',
+      url: url + '/' + log_id,
+      cache: true
+    });
   };
 
-  this.getTrip = function (tripId) {
-    if (checkAuth()) {
-      return $http({
-        method: 'GET',
-        url: url + '/' + tripId,
-        headers: PARSE.CONFIG.headers,
-        cache: true
-      });
-    }
-  };
-
-  var Trip = function Trip(obj) {
-    this.location = obj.location;
-    this.Url = obj.Url;
-    this.sum = obj.sum;
-    this.userName = obj.userName;
-  };
-
-  this.addTrip = function (obj) {
-    var c = new Trip(obj);
-    return $http.post(url, c, PARSE.CONFIG);
+  var Log = function Log(obj) {
+    this.username = obj.username;
+    this.title = obj.title;
+    this.description = obj.description;
   };
 };
 
-TripService.$inject = ['$http', 'PARSE'];
+LocationService.$inject = ['$http', 'SERVER'];
 
-exports['default'] = TripService;
+exports['default'] = LocationService;
+
+// Get List of Employees within an org
+
+//   this.getOrgList = function() {
+//     UserService.checkAuth();
+
+//     return $http({
+//       method: 'GET',
+//       url: SERVER.URL + '/employees',
+//       headers: SERVER.CONFIG.headers,
+//       cache: true
+//     });
+//   };
+
+// };
+
+// ConsoleService.$inject = ['$http', 'SERVER', '$state', 'UserService'];
+
+// export default ConsoleService;
 module.exports = exports['default'];
 
 },{}],8:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var UserService = function UserService($http, SERVER) {
+
+  var url = 'https://mysterious-fjord-1759.herokuapp.com' + '/logs';
+
+  this.getLogs = function () {
+    return $http({
+      url: url,
+      method: 'GET',
+      cache: true
+    });
+  };
+
+  this.getLog = function (log_id) {
+    return $http({
+      method: 'GET',
+      url: url + '/' + log_id,
+      cache: true
+    });
+  };
+
+  var Log = function Log(obj) {
+    this.username = obj.username;
+    this.title = obj.title;
+    this.description = obj.description;
+  };
+};
+
+UserService.$inject = ['$http', 'SERVER'];
+
+exports['default'] = UserService;
+module.exports = exports['default'];
+
+},{}],9:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var UserService = function UserService($http, SERVER) {
+
+  var url = 'https://mysterious-fjord-1759.herokuapp.com' + '/users/3/logs';
+
+  this.getLogs = function () {
+    return $http({
+      url: url,
+      method: 'GET',
+      cache: true
+    });
+  };
+
+  this.getLog = function (log_id) {
+    return $http({
+      method: 'GET',
+      url: url + '/' + log_id,
+      cache: true
+    });
+  };
+
+  var Log = function Log(obj) {
+    this.username = obj.username;
+    this.title = obj.title;
+    this.description = obj.description;
+  };
+};
+
+UserService.$inject = ['$http', 'SERVER'];
+
+exports['default'] = UserService;
+module.exports = exports['default'];
+
+},{}],10:[function(require,module,exports){
 /**
  * State-based routing for AngularJS
  * @version v0.2.15
@@ -4611,7 +4685,7 @@ angular.module('ui.router.state')
   .filter('isState', $IsStateFilter)
   .filter('includedByState', $IncludedByStateFilter);
 })(window, window.angular);
-},{}],9:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 /**
  * @license AngularJS v1.4.7
  * (c) 2010-2015 Google, Inc. http://angularjs.org
@@ -33516,11 +33590,11 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],10:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":9}]},{},[6])
+},{"./angular":11}]},{},[6])
 
 
 //# sourceMappingURL=main.js.map

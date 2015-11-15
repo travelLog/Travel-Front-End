@@ -11,7 +11,12 @@ body {
 
 .passport {
   min-height: 100%;
+<<<<<<< HEAD
   margin: auto;
+=======
+  margin: 20px auto ;
+  postion: relative;
+>>>>>>> theatondev
 }
 
 .top-bar {
@@ -74,10 +79,15 @@ body {
 }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> theatondev
 .homePageContents {
  display: inline-block;
  margin-left: 275px;
  margin-top: 215px;  
+<<<<<<< HEAD
   input {
    display: inline-block;
    width: 300px;
@@ -102,9 +112,46 @@ body {
     font-family: 'Permanent Marker', cursive;
     font-size: 24px;
   }
+=======
+
+input {
+ display: inline-block;
+ width: 300px;
+ height: 50px;
+ border-radius: 10px;
+}
+.myBtn {
+  border-radius:10px;
+  margin-left: 20px;
+  font-family: 'Permanent Marker', cursive;
+  color: black;
+}
+.showMe {
+  display: inline-block;
+  margin-right: 15px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 24px;
+}
+.passPort {
+  display: inline-block;
+  margin-left: 15px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 24px;
+}
+}
+
+
+
+
+.traveler-list img {
+  max-width: 200px;
+>>>>>>> theatondev
 }
 
 .traveler-list img {
   max-width: 200px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> theatondev

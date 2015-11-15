@@ -1,10 +1,10 @@
 <section class="homePageContents">
  <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
-   <form ng-submit="search(query)">
+   <form>
      <div class="showMe">Show Me</div>
-      <input placeholder="Enter Username" ng-model="query">
+      <input placeholder="Enter Username" ng-model="num">
      <div class="passPort">Passport</div>
-  <a href="#/traveler"><button class="myBtn">Access Granted</button></a>
+  <a href="#/traveler/{{ num }}"><button class="myBtn">Access Granted</button></a>
 </form>
 </section>
 

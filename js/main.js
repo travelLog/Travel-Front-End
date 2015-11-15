@@ -8,18 +8,19 @@ import LogController from './controllers/log.controller';
 import TravelerController from './controllers/traveler.controller';
 import LocationController from './controllers/location.controller';
 
-import TripService from './services/trip.service';
+import UserService from './services/user.service';
+import LocationService from './services/location.service';
+import LogService from './services/log.service';
 
 angular
   .module('app', ['ui.router'])
-  .constant('PARSE', {
-    URL: "https://api.parse.com/1/",
+  .constant('SERVER', {
+    URL: "https://mysterious-fjord-1759.herokuapp.com/",
     CONFIG: {
-      headers: {
-        'X-Parse-Application-Id': 'y6KjiO3d067pN9BqYopldmUHxOFsSZbPFqh7hQhH',
-        'X-Parse-REST-API-Key': 'RsAJRP7w7pBbeRmm1fGTf8bpyXFHc6gLMuSwJB6J'
-      }
+      headers: {}
+        
     }
+      
   })
   .config(config)
   .controller('HomeController', HomeController)
@@ -27,7 +28,8 @@ angular
   .controller('TravelerController', TravelerController)
   .controller('LocationController', LocationController)
 
-  .service('TripService', TripService)
+  .service('UserService', UserService)
+  .service('LocationService', LocationService)
 ;
 
 

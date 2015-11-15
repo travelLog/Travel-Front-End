@@ -1,6 +1,10 @@
 let HomeController = function ($scope) {
 
-  // $scope.title = 'You are Home!';
+  $scope.id = "";
+
+  $scope.search = function(num) {
+    console.log(num);
+  }
 
 
 

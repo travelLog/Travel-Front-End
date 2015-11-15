@@ -1,36 +1,16 @@
-let TravelerController = function($scope, $http, PARSE) {
-  $scope.title = "Traveler ";
-  $scope.titletwo = "Information";
+let TravelerController = function ($scope, UserService) {
 
-  let url = PARSE.URL + 'classes/trips';
+  $scope.title = 'You are on the Travler page!';
 
-  $http.get(url, PARSE.CONFIG).then( (res) => {
-    $scope.trips = res.data.results;
+
+  UserService.getLogs().then ( (res) => {
+    $scope.logs = res.data.logs;
+    console.log(res);
   });
 
 };
-
-TravelerController.$inject = ['$scope', '$http', 'PARSE'];
-
+TravelerController.$inject = ['$scope', 'UserService'];
 export default TravelerController;
-
-//   $scope.count = 0;
-//   $scope.message = "";
-
-//   $scope.incrementByOne= function() {
-//     $scope.count++;
-//     $scope.message= ($scope.count === 1) ? "Thank you for your submission.  We will contact you soon!" : "Thank you for your interest!";
-
-//   };
+ 
 
 
-//   $scope.addTrip = (obj) => {
-//     TripService.addTrip(obj).then( (res) => {
-//       $scope.trip = {};
-//     });
-//   };   
-  
-
-// };
-// TravelerController.$inject = ['$scope', 'TripService'];
-// export default TravelerController;
