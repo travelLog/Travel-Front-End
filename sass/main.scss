@@ -1,6 +1,11 @@
 // Put any @imports here
 // See Readme for a list of supported ones
+@import "bourbon";
+@import "neat";
+
 @import "foundation";
+
+@import "font-awesome";
 
 body {
   background: #e2ebf3;
@@ -10,38 +15,42 @@ body {
 }
 
 .passport {
+  @include outer-container;
+  @include span-columns(12);
   min-height: 100%;
-  margin: auto;
 }
 
 .top-bar {
+  @include span-columns(12 of 12);
   width: 100%;
   height: 45px;
   top: 0px;
   margin-bottom: 50px;
   position: fixed;
   display: block;
+  
 }
 
 .center {
+  @include outer-container;
+  @include shift();
   .container {
-    width: 1020px;
+    @include span-columns(12);
+    @include shift();
     margin: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
     padding: 30px;
     display: block;  
     overflow: hidden;
   }
 }
 #footer {
+  @include span-columns(12 of 12);
   position: fixed;
   background-color: #292c2f;
   text-align: center;
   font-size: 1.2rem;
   padding: 1rem;
   height: 147px;
-  width:100%;
   bottom: 0px;
   box-sizing: border-box;
   p {
@@ -110,7 +119,29 @@ body {
   }
 }
 
-.traveler-list img {
-  max-width: 200px;
+.travel-logs {
+  @include outer-container;
+  margin: auto;
+  margin-top: 5%;
+  align: center;
+  width: 100%;
+  .traveler-list {
+    @include span-columns(12);
+    li {
+      @include span-columns(3);
+      @include omega(4n);
+      display: inline-block;
+      p {
+        text-align: center;
+        margin: 10px 0;
+      }
+      img {
+        max-width: 200px;
+        height: 200px;
+      }
+    }
+  }
 }
+
+
 
