@@ -8492,22 +8492,34 @@ body {
   .homePageContents .home-form {
     text-align: center; }
     .homePageContents .home-form .myBtn {
-      background-color: #8D9093;
-      border-radius: 10px;
       margin: auto;
-      font-family: 'Permanent Marker', cursive;
-      color: black;
-      display: block; }
+      margin-top: 20px;
+      display: block;
+      font-family: cursive;
+      font-size: 1rem;
+      letter-spacing: 5px;
+      border: 4px solid transparent;
+      border-radius: 10px;
+      border-image: linear-gradient(45deg, #E44753, skyblue);
+      border-image-slice: 1;
+      background: linear-gradient(45deg, #E44753, skyblue);
+      -webkit-background-clip: text;
+      text-fill-color: transparent;
+      transition: all 0.2s ease; }
+      .homePageContents .home-form .myBtn:hover {
+        border-image: linear-gradient(45deg, #E44753, skyblue);
+        background: linear-gradient(45deg, #E44753, #72ABC0); }
     .homePageContents .home-form .showMe {
       display: inline-block;
       margin-right: 15px;
       font-family: 'Permanent Marker', cursive;
-      font-size: 24px; }
+      font-size: 40px;
+      color: #E44753; }
     .homePageContents .home-form .passPort {
       display: inline-block;
-      margin-left: 15px;
+      color: #64C3F9;
       font-family: 'Permanent Marker', cursive;
-      font-size: 24px; }
+      font-size: 40px; }
 
 .travel-logs {
   margin: auto;

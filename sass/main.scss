@@ -7,6 +7,9 @@
 
 @import "font-awesome";
 
+$gradient: linear-gradient(45deg, #E44753, skyblue);
+$gradient2: linear-gradient(45deg, #E44753, #72ABC0);
+
 @mixin cover-background($img-uri, $background-top:"center", $background-left:"center", $background-attachment:"fixed") {
   background: url($img-uri) no-repeat unquote($background-top) unquote($background-left) unquote($background-attachment);
   -webkit-background-size: cover;
@@ -104,24 +107,37 @@ body {
   .home-form {
     text-align: center;
     .myBtn {
-      background-color: #8D9093;
-      border-radius:10px;
       margin: auto;
-      font-family: 'Permanent Marker', cursive;
-      color: black;
+      margin-top: 20px;
       display: block;
+      font-family: cursive;
+      font-size: 1rem;
+      letter-spacing: 5px;
+      border: 4px solid transparent;
+      border-radius: 10px;
+      border-image: $gradient;
+      border-image-slice: 1;
+      background: $gradient;
+      -webkit-background-clip: text;
+      text-fill-color: transparent;
+      transition: all 0.2s ease;
+      &:hover {
+        border-image: $gradient;
+        background: $gradient2;
+      }
     }
     .showMe {
       display: inline-block;
       margin-right: 15px;
       font-family: 'Permanent Marker', cursive;
-      font-size: 24px;
+      font-size: 40px;
+      color: #E44753;
     }
     .passPort {
       display: inline-block;
-      margin-left: 15px;
-      font-family: 'Permanent Marker', cursive;
-      font-size: 24px;
+      color: #64C3F9;
+      font-family:'Permanent Marker', cursive;
+      font-size: 40px;
     }
   }
 }
@@ -140,6 +156,11 @@ body {
       @include span-columns(3 of 12);
       @include omega(4n);
       display: inline-block;
+      //  border: 4px solid transparent;
+      // border-radius: 10px;
+      // border-image: $gradient;
+      // border-image-slice: 1;
+      // background: $gradient;
       border: 1px solid #333333;
       border-radius: 4px;
       margin-top: 40px;
